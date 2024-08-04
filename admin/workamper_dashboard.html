@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workamper Dashboard</title>
+    
+    <link rel="stylesheet" href="../css/dashboard_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/adminAuth.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <div class="header-container">
+                <div class="logo-container">
+                    <img src="../image/7thRanchLogo_trans.png" alt="7th Ranch Logo" id="logo">
+                </div>
+                <div class="title-container">
+                    <h1>Manage Workamper <br>Dashboard</h1>
+                </div>
+                <div class="user-info">
+                    <button id="logoutBtn">Logout</button>
+                    <div class="user-details">
+                        <p>Welcome, <span id="userName"></span></p>
+                        <p>Role: <span id="userRole"></span></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+               
+        <main class="dashboard-content">
+            <section class="card" id="createWorkamperCard">
+                <h2>Create New Workamper</h2>
+                <form id="createUserForm">
+                    <input type="text" id="newUserName" placeholder="Full Name" required>
+                    <input type="email" id="newUserEmail" placeholder="Email" required>
+                    <input type="password" id="newUserPassword" placeholder="Password" required>
+                    <select id="newUserRole" required>
+                        <option value="">Select a role</option>
+                        <option value="workamper">Workamper</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <button type="submit">Create User</button>
+                </form>
+            </section>
+            
+            <section class="card" id="workamperListCard">
+                <h2>Workamper List</h2>
+                <div class="list-controls">
+                    <label><input type="checkbox" id="showInactive" checked> Show Inactive</label>
+                </div>
+                <div id="workamperList" class="workamper-list">
+                    <!-- This will be populated dynamically -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Profile Popup -->
+    <div id="profilePopup" class="wk_popup">
+        <div class="wk_popup-content">
+            <span class="wk_close">&times;</span>
+            <h2>Workamper Profile</h2>
+            <form id="wk_profileForm">
+                <div class="wk_profile-picture">
+                    <img id="wk_profilePic" src="../image/default-avatar.png" alt="Profile Picture">
+                    <input type="file" id="wk_profilePicUpload" accept="image/*">
+                </div>
+                <input type="text" id="wk_fullName" placeholder="Full Name" required>
+                <input type="text" id="wk_spouseName" placeholder="Spouse's Name">
+                <input type="text" id="wk_address" placeholder="Street Address">
+                <input type="text" id="wk_city" placeholder="City">
+                <input type="text" id="wk_state" placeholder="State">
+                <input type="text" id="wk_zip" placeholder="ZIP Code">
+                <input type="tel" id="wk_phone" placeholder="Phone Number">
+                <input type="email" id="wk_email" placeholder="Email Address" required>
+                <input type="text" id="wk_emergencyContactName" placeholder="Emergency Contact Name">
+                <input type="tel" id="wk_emergencyContactPhone" placeholder="Emergency Contact Phone">
+                <div class="wk_toggle-container">
+                    <label for="wk_w9Signed">W9 Signed:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="wk_w9Signed">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="wk_toggle-container">
+                    <label for="wk_isActive">Active:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="wk_isActive">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <button type="button" id="wk_resetPassword">Reset Password</button>
+                <button type="button" id="wk_resetUsername">Reset Username</button>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="../js/workamper_dashboard.js"></script>
+</body>
+</html>
