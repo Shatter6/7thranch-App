@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7th Ranch Maintenance - Dashboard</title>
+    
+    <!-- Fonts and Stylesheets -->
+    <link rel="stylesheet" href="../css/dashboard_styles.css">
+    <link rel="stylesheet" href="../css/sitemap_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="../js/firebase-config.js"></script>
+
+    <!-- Initialize Admin authorization -->
+    <script src="../js/adminAuth.js"></script>
+
+    <!-- Initialize Login Authorization -->
+    <script src="../js/login.js"></script>
+
+    <!-- Immediate Auth Check -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuth(['superadmin', 'admin', 'workamper']);
+        });
+    </script>
+</head>
+
+<head>
+  <title>Site Status</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Reklame+Script&family=Poppins:wght@200;600&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <header>
+    <h1>Site Status</h1>
+    <nav>
+      <ul>
+        <li><a href="#a-sites">A Sites</a></li>
+        <li><a href="#b-sites">B Sites</a></li>
+        <li><a href="#f-sites">F Sites</a></li>
+      </ul>
+    </nav>
+    <div class="color-key">
+      <div class="key-item checkedIn">Checked In</div>
+      <div class="key-item checkedOut">Checked Out</div>
+      <div class="key-item available">Available</div>
+      <div class="key-item host">Hosts</div>
+  </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="column">
+        <h2 id="a-sites">A Sites</h2>
+        <div class="site-list">
+            <button id="A1" class="site-button host" data-status="host">A1 - Host</button>
+          <button id="A2" class="site-button">A2</button>
+          <button id="A3" class="site-button">A3</button>
+          <button id="A4" class="site-button">A4</button>
+          <button id="A5" class="site-button">A5</button>
+          <button id="A6" class="site-button">A6</button>
+          <button id="A7" class="site-button">A7</button>
+          <button id="A8" class="site-button">A8</button>
+          <button id="A9" class="site-button">A9</button>
+          <button id="A10" class="site-button">A10</button>
+          <button id="A11" class="site-button">A11</button>
+          <button id="A12" class="site-button">A12</button>
+          <button id="A13" class="site-button host" data-status="host">A13 - Host</button>
+          <button id="A14" class="site-button">A14</button>
+          <button id="A15" class="site-button">A15</button>
+          <button id="A16" class="site-button">A16</button>
+          <button id="A17" class="site-button">A17</button>
+          <button id="A18" class="site-button">A18</button>
+          <button id="A19" class="site-button">A19</button>
+          <button id="A20" class="site-button">A20</button>
+          <button id="A21" class="site-button">A21</button>
+          <button id="A22" class="site-button">A22</button>
+          <button id="A23" class="site-button">A23</button>
+          <button id="A24" class="site-button">A24</button>
+          <button id="A25" class="site-button">A25</button>
+          <button id="A26" class="site-button">A26</button>
+          <button id="A27" class="site-button">A27</button>
+          <button id="A28" class="site-button">A28</button>
+          <button id="A29" class="site-button">A29</button>
+          <button id="A30" class="site-button">A30</button>
+          <button id="A31" class="site-button">A31</button>
+          <button id="A32" class="site-button">A32</button>
+          <button id="A33" class="site-button">A33</button>
+          <button id="A34" class="site-button">A34</button>
+          <button id="A35" class="site-button">A35</button>
+          <button id="A36" class="site-button">A36</button>
+          <button id="A37" class="site-button">A37</button>
+          <button id="A38" class="site-button">A38</button>
+          <button id="A39" class="site-button">A39</button>
+          <button id="A40" class="site-button">A40</button>
+          <button id="A41" class="site-button">A41</button>
+          <button id="A42" class="site-button">A42</button>
+          <button id="A43" class="site-button">A43</button>
+          <button id="A44" class="site-button">A44</button>
+          <button id="A45" class="site-button host" data-status="host">A45 - Host</button>
+          <button id="A46" class="site-button">A46</button>
+          <button id="A47" class="site-button">A47</button>
+          <button id="A48" class="site-button">A48</button>
+          <button id="A49" class="site-button host" data-status="host">A49 - Host</button>
+        </div>
+        </div>
+      </div>
+      <div class="column">
+        <h2 id="b-sites">B Sites</h2>
+        <div class="site-list">
+          <button id="B1" class="site-button">B1</button>
+          <button id="B2" class="site-button">B2</button>
+          <button id="B3" class="site-button">B3</button>
+          <button id="B4" class="site-button">B4</button>
+          <button id="B5" class="site-button">B5</button>
+          <button id="B6" class="site-button">B6</button>
+          <button id="B7" class="site-button">B7</button>
+          <button id="B8" class="site-button">B8</button>
+          <button id="B9" class="site-button">B9</button>
+          <button id="B10" class="site-button">B10</button>
+          <button id="B11" class="site-button">B11</button>
+          <button id="B12" class="site-button">B12</button>
+          <button id="B13" class="site-button">B13</button>
+          <button id="B14" class="site-button">B14</button>
+          <button id="B15" class="site-button">B15</button>
+          <button id="B16" class="site-button">B16</button>
+          <button id="B17" class="site-button">B17</button>
+          <button id="B18" class="site-button">B18</button>
+          <button id="B19" class="site-button">B19</button>
+          <button id="B20" class="site-button">B20</button>
+        </div>
+
+        <h2 id="f-sites">F Sites</h2>
+        <div class="site-list">
+          <button id="F1" class="site-button">F1</button>
+          <button id="F2" class="site-button">F2</button>
+          <button id="F3" class="site-button">F3</button>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-space"></div>
+  </main>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+    import { getDatabase, ref, set, onValue, connectDatabaseEmulator } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyA3VDhqTdRgrYt27qN2OQf9ibtlHXSUQmA",
+      authDomain: "th-ranch-app.firebaseapp.com",
+      databaseURL: "https://th-ranch-app-default-rtdb.firebaseio.com",
+      projectId: "th-ranch-app",
+      storageBucket: "th-ranch-app.appspot.com",
+      messagingSenderId: "863753473532",
+      appId: "1:863753473532:web:51e46728563813163c3679",
+      measurementId: "G-FBGM0BS62J"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    // Test Firebase connection
+    const testRef = ref(database, 'test');
+    set(testRef, { init: Date.now() })
+      .then(() => console.log('Firebase initialized and working'))
+      .catch(error => console.error('Firebase initialization test failed:', error));
+
+    function updateSiteStatus(siteId, status) {
+      console.log(`Attempting to update site ${siteId} to status ${status}`);
+      const siteRef = ref(database, `sites/${siteId}`);
+      set(siteRef, { status: status })
+        .then(() => {
+          console.log(`Successfully updated site ${siteId} to status ${status}`);
+          updateSiteDisplay(siteId, status);
+          showNotification('Saved');
+        })
+        .catch(error => {
+          console.error(`Error saving status for site ${siteId}:`, error);
+          showNotification('Error saving status. Please try again.');
+        });
+    }
+
+    function updateSiteDisplay(siteId, status) {
+      const button = document.getElementById(siteId);
+      if (button) {
+        button.setAttribute('data-status', status);
+        button.style.backgroundColor = getSiteColor(status);
+      }
+    }
+
+    function getSiteColor(status) {
+      if (status === 'checkedIn') return '#bae523';
+      if (status === 'checkedOut') return '#d01817';
+      if (status === 'host') return '#aa1f84';
+      return '#e0e0e0';
+    }
+
+    function showNotification(message) {
+      const notification = document.getElementById('notification') || createNotificationElement();
+      notification.textContent = message;
+      notification.style.right = '0';
+      setTimeout(() => {
+        notification.style.right = '-300px';
+      }, 3000);
+    }
+
+    function createNotificationElement() {
+      const notification = document.createElement('div');
+      notification.id = 'notification';
+      notification.style.position = 'fixed';
+      notification.style.top = '60px';
+      notification.style.right = '-300px';
+      notification.style.backgroundColor = '#333';
+      notification.style.color = 'white';
+      notification.style.padding = '10px 20px';
+      notification.style.transition = 'right 0.5s';
+      notification.style.zIndex = '1000';
+      document.body.appendChild(notification);
+      return notification;
+    }
+
+    // Set up event listeners for buttons
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.site-button');
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const siteId = button.id;
+          const currentStatus = button.getAttribute('data-status');
+          let newStatus;
+
+          if (currentStatus === 'host') {
+            showNotification('Host sites cannot be changed');
+            return;
+          }
+
+          if (currentStatus === 'available' || !currentStatus) newStatus = 'checkedIn';
+          else if (currentStatus === 'checkedIn') newStatus = 'checkedOut';
+          else newStatus = 'available';
+
+          updateSiteStatus(siteId, newStatus);
+        });
+      });
+
+      // Load initial statuses
+      const sitesRef = ref(database, 'sites');
+      onValue(sitesRef, (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+          const siteId = childSnapshot.key;
+          const siteStatus = childSnapshot.val().status;
+          updateSiteDisplay(siteId, siteStatus);
+        });
+      }, (error) => {
+        console.error("Error fetching site statuses:", error);
+      });
+    });
+</script>
+
+</body>
+</html>

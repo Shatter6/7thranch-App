@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>7th Ranch Guest Services - Dashboard</title>
+        
+        <!-- Fonts and Stylesheets -->
+        <link rel="stylesheet" href="../css/dashboard_styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+        <!-- Firebase SDKs -->
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+        <!-- Initialize Firebase -->
+        <script src="../js/firebase-config.js"></script>
+
+        <!-- Initialize Admin authorization -->
+        <script src="../js/adminAuth.js"></script>
+
+        <!-- Initialize Login Authorization -->
+        <script src="../js/login.js"></script>
+
+        <!-- Immediate Auth Check -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                checkAuth(['admin', 'workamper']);
+            });
+        </script>
+    </head>
+    
+<body class="guest-dashboard-page">
+    <!--
+    ========================================= 
+            Main dashboard container 
+    =========================================            
+    -->
+    <div class="dashboard-container guest-dashboard">
+        
+        <!-- Header section -->
+        <header>
+            <div class="header-container">
+                <!-- 7th Ranch Logo -->
+                <div class="logo-container">
+                    <img src="image/7thRanchLogo_trans.png" alt="7th Ranch Logo" id="logo">
+                </div>
+                <!-- Page Title -->
+                <div class="title-container">
+                    <h1>Guest Services</h1>
+                </div>
+                <!-- User info and Nav buttons -->
+                <div class="user-info">
+                    <button id="backToDashboard" class="dashboard-btn">Back to Dashboard</button>
+                    <button id="logoutBtn" class="dashboard-btn">Logout</button>
+                    <div class="user-details">
+                        <p>Welcome, <span id="userName">User</span> <i class="fas fa-cog"></i></p>
+                        <p>Role: <span id="userRole">Maintenance Staff</span></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="card check-in-section">
+            <div class="check-in-header">
+                <h2>Recent Check-Ins</h2>
+                <button id="assignSiteBtn" class="assign-site-btn">Assign Site</button>
+            </div>
+        </section>
+    </div>
+
+    <!--
+    ========================================= 
+            Slider Menu Content 
+    =========================================            
+    -->
+
+    <div id="checkInSlider" class="slider-menu">
+        <div class="slider-tab">Check In</div>
+        <div class="slider-content">
+            <div id="checkInForm">
+            
+                    
+                <div id="manufacturerSection" class="process-section">
+                    <h3>Select Manufacturer</h3>
+                    <div id="manufacturerButtons" class="button-container"></div>
+                </div>
+            
+                    
+                <div id="colorSection" class="process-section hidden">
+                    <h3>Select Color</h3>
+                    <div id="colorButtons" class="button-container"></div>
+                </div>
+            
+                
+                <div id="stateSection" class="process-section hidden">
+                    <h3>Select State</h3>
+                    <div id="stateButtons" class="button-container"></div>
+                </div>
+
+                
+                <div id="licensePlateSection" class="process-section hidden">
+                    <h3>Enter License Plate</h3>
+                    <input type="text" id="licensePlateInput" name="licensePlate">
+                    <button id="submitLicensePlate">Submit</button>
+                </div>
+            
+                <div id="siteSection" class="process-section hidden">
+                <h3>Select Site</h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/guest_dashboard.js"></script>
+</body>
+</html>
