@@ -1,0 +1,155 @@
+/* Card styles */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card h2 {
+  font-family: 'Beau Rivage', cursive;
+  color: var(--text-dark);
+  margin-top: 0;
+  font-size: 36px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+}
+
+.card-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+/* Button styles */
+.dashboard-btn {
+  background: var(--gradient-2);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 5px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.dashboard-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Quick actions styles */
+.quick-actions {
+  grid-area: actions;
+}
+
+.quick-actions .button-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+  justify-items: center;
+}
+
+.card-button {
+  background: linear-gradient(135deg, 
+              rgba(233, 69, 96, 0.9), 
+              rgba(255, 150, 119, 0.9));
+  color: white;
+  border-radius: 5px;
+  padding: clamp(8px, 2vw, 10px);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-decoration: none;
+  width: clamp(60px, 10vw, 80px);
+  height: clamp(60px, 10vw, 80px);
+  aspect-ratio: 1 / 1;
+  font-size: clamp(12px, 2.5vw, 16px);
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.1em;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, 
+              rgba(233, 69, 96, 0.95), 
+              rgba(255, 150, 119, 0.95));
+}
+
+/* Form Elements */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 90%; /* Changed from 100% to 90% */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-dark);
+    font-size: 14px; /* Added for consistency */
+}
+
+/* Add styles for placeholder text */
+input::placeholder,
+select::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    opacity: 1; /* Firefox */
+}
+
+/* Styling for the form container */
+.form-container {
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+/* Button styling */
+button[type="submit"] {
+    width: 90%; /* Match input width */
+    background: var(--gradient-2);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px 0; /* Changed to match input margin */
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

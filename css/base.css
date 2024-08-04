@@ -1,1 +1,49 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+/* Root variables */
+:root {
+  --container-bg: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(232, 233, 225, 0.2);
+  --text-dark: #000000;
+  --accent-1: #0f3460;
+  --accent-2: #e94560;
+  --gradient-1: linear-gradient(135deg, #0f3460, #16213e);
+  --gradient-2: linear-gradient(135deg, #e94560, #ff9677);
+  --button-bg: rgba(227, 226, 223, 0.2);
+  --button-text: #9S1759;
+  --min-font-size: 24px;
+  --max-font-size: 60px;
+  --min-width: 320px;
+  --max-width: 1200px;
+}
+
+/* Base styles */
+body {
+/*  border: 5px solid red !important; */
+  font-family: 'Poppins', sans-serif;
+  background-image: url('../image/dash_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 30px 20px;
+  min-height: 100vh;
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Beau Rivage', cursive;
+  color: var(--text-dark);
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-1);
+}

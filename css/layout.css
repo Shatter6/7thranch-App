@@ -1,0 +1,64 @@
+/* Dashboard container */
+.dashboard-container {
+  background: var(--container-bg);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: var(--max-width);
+  width: 100%;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Header styles */
+header {
+  margin-bottom: 20px;
+}
+
+.header-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-container {
+  justify-self: start;
+}
+
+#logo {
+  max-height: 95px;
+  width: auto;
+}
+
+.title-container {
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+  margin: 0;
+  white-space: nowrap;
+  font-size: clamp(var(--min-font-size), 5vw, var(--max-font-size));
+}
+
+.user-info {
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Main content layout */
+.dashboard-content {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-areas: 
+      "actions actions"
+      "tasks stats";
+}
+
+.tasks { grid-area: tasks; }
+.quick-stats { grid-area: stats; }

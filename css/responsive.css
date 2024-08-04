@@ -1,0 +1,41 @@
+@media (max-width: 768px) {
+  .header-container {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logo user"
+      "title title";
+    gap: 10px;
+  }
+
+  .logo-container { grid-area: logo; justify-self: start; }
+  .user-info { grid-area: user; justify-self: end; align-items: flex-end; }
+  .title-container { grid-area: title; grid-column: 1 / -1; justify-self: center; }
+
+  .dashboard-content {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "actions"
+        "tasks"
+        "stats";
+  }
+
+  .workamper-list {
+    grid-template-columns: minmax(80px, 1fr) minmax(60px, 1fr) minmax(60px, 1fr);
+    gap: 5px;
+  }
+
+  .workamper-list-header,
+  .workamper-item > * {
+    padding: 5px;
+    font-size: 0.9em;
+  }
+
+  #createUserForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #createUserForm > * {
+    margin-bottom: 10px;
+  }
+}
